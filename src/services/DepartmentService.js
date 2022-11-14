@@ -1,45 +1,35 @@
 // Library
 import { DataTypes } from 'sequelize';
 
-class KabinetService {
+class DepartmentService {
   constructor(server) {
     this.server = server;
     this.db = this.server.model.db;
-    this.table = this.db.define('kabinet', {
+    this.table = this.db.define('department', {
       name: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      periode: {
-        type: DataTypes.NUMBER,
+      division: {
+        type: DataTypes.ENUM('BE', 'DP'),
         allowNull: false
-      },
-      description: {
-        type: DataTypes.TEXT,
-        allowNull: true
       },
       logo: {
         type: DataTypes.TEXT,
         allowNull: true
-      },
-      active: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false
       }
     }, {
-      tableName: 'kabinet',
+      tableName: 'department',
       timestamps: false
     });
   }
 
-  async addKabinet(name, priode, description, logo, active) {
+  async create(name, division, logo) {
     const [data, created] = await this.table.findOrCreate({
       where: { name },
       defaults: {
-        priode,
-        description,
+        division,
         logo,
-        active
       }
     });
 
@@ -54,7 +44,7 @@ class KabinetService {
     let data = await this.table.findAll();
     data = {
       total: data.length,
-      kabinet: data.map((val) => val.dataValues).slice(limit * (page - 1), limit * page)
+      department: data.map((val) => val.dataValues).slice(limit * (page - 1), limit * page)
     }
     
     return data;
@@ -66,8 +56,8 @@ class KabinetService {
     return data.dataValues;
   }
 
-  async update(id, name, priode, description, logo, active) {
-    const data = await this.table.update({name, priode, description, logo, active}, {
+  async update(id, name, division, logo) {
+    const data = await this.table.update({name, division, logo}, {
       where: {
         id
       }
@@ -81,6 +71,6 @@ class KabinetService {
     
     return data;
   }
-};
+}
 
-export default KabinetService;
+export default DepartmentService;

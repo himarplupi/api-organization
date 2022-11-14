@@ -1,24 +1,24 @@
 // App
-import KabinetService from "../../services/KabinetService.js";
+import DepartmentService from "../../services/DepartmentService.js";
 
 class Delete {
   constructor(server, api) {
-    api.delete('/kabinet/:id', async (req, res) => {
+    api.delete('/departments/:id', async (req, res) => {
       const id = Number(req.params.id);
-      const kabinetService = new KabinetService(server);
-      const data = await kabinetService.delete(id);
+      const departmentService = new DepartmentService(server);
+      const data = await departmentService.delete(id);
 
       if(data === 1) {
         res.send({
           "status": "success",
-          "message": "kabinet berhasil dihapus"
+          "message": "department berhasil dihapus"
         });
 
         return;
       } else {
         res.status(404).send({
           "status": "not found",
-          "message": "kabinet tidak ditemukan"
+          "message": "department tidak ditemukan"
         });
 
         return;

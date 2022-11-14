@@ -47,6 +47,6 @@ class Server {
     })
   }
   
-}
+};
 
 new Server().init();

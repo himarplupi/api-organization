@@ -18,6 +18,6 @@ class ModelHandler {
 
     return this.db;
   }
-}
+};
 
 export default ModelHandler;

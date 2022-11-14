@@ -46,7 +46,7 @@ class Update {
 
         return;
       } else {
-        res.send({
+        res.status(404).send({
           "status": "not found",
           "message": "kabinet tidak ditemukan"
         });
