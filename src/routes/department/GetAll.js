@@ -21,7 +21,7 @@ class GetAll {
       res.send({
         status: "success",
         data: {
-          kabinet: data.department,
+          departments: data.department,
           metadata: {
             total_page: Math.ceil(data.total / limit),
             total_data: data.total,

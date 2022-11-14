@@ -20,7 +20,7 @@ class GetById {
       res.send({
         "status": "success",
         "data": {
-          "kabinet": {
+          "department": {
             "id": data.id,
             "name": data.name,
             "division": data.division,

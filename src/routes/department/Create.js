@@ -12,14 +12,14 @@ class Create {
       if(isCreated === 'created') {
         res.status(201).send({
           "status": "success",
-          "message": "departemen baru berhasil dibuat"
+          "message": "department baru berhasil dibuat"
         });
 
         return;
       } else {
         res.status(404).send({
           "status": "already",
-          "message": "departemen sudah tersedia"
+          "message": "department sudah tersedia"
         });
 
         return;
