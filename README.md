@@ -10,28 +10,28 @@
   API Documentation: <a href="API-docs.md">Click Here</a>
   <h2>TODO List</h2>
   <h3>Kabinet</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambahkan kabinet baru</li>
-    <li>Membuat fungsi edit kabinet</li>
-    <li>Membuat fungsi delete kabinet</li>
-    <li>Membuat fungsi untuk menampilkan seluruh kabinet</li>
+  <ul>
+    <li>Membuat fungsi untuk menambahkan kabinet baru ✔️</li>
+    <li>Membuat fungsi edit kabinet ✔️</li>
+    <li>Membuat fungsi delete kabinet ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh kabinet ✔️</li>
   </ul>
   <h3>Department</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambah departement</li>
-    <li>Membuat fungsi edit departement</li>
-    <li>Membuat fungsi delete departement</li>
-    <li>Membuat fungsi untuk menampilkan seluruh departement</li>
-    <li>Membuat fungsi untuk menampilkan detail  departemen berdasarkan id</li>
+  <ul>
+    <li>Membuat fungsi untuk menambah departement ✔️</li>
+    <li>Membuat fungsi edit departement ✔️</li>
+    <li>Membuat fungsi delete departement ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh departement ✔️</li>
+    <li>Membuat fungsi untuk menampilkan detail  departemen berdasarkan id ✔️</li>
   </ul>
   <h3>Proker</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambah proker baru</li>
-    <li>Membuat fungsi edit proker</li>
-    <li>Membuat fungsi delete proker</li>
-    <li>Membuat fungsi untuk menampilkan seluruh proker</li>
-    <li>Membuat fungsi untuk menampilkan detail proker berdasarkan id</li>
-    <li>Membuat fungsi pencarian proker</li>
+  <ul>
+    <li>Membuat fungsi untuk menambah proker baru ✔️</li>
+    <li>Membuat fungsi edit proker ✔️</li>
+    <li>Membuat fungsi delete proker ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh proker ✔️</li>
+    <li>Membuat fungsi untuk menampilkan detail proker berdasarkan id  ✔️</li>
+    <li>Membuat fungsi pencarian proker ✔️</li>
   </ul>
 </div>
 
