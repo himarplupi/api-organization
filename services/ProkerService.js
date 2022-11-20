@@ -14,7 +14,7 @@ class ProkerService {
         allowNull: false
       },
       thumbnail: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
       },
       department_id: {
