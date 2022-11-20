@@ -7,7 +7,7 @@
 <br>
 
 <div align="left">
-  API Documentation: https://github.com/Asadaaaaa/api-organization/blob/dev/organization/API-docs.md
+  API Documentation: <a href="API-docs.md">Click Here</a>
   <h2>TODO List</h2>
   <h3>Kabinet</h3>
   <ul style="list-style-type: '✔️';">
