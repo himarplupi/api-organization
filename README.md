@@ -73,7 +73,7 @@
   <p>Create table proker:</p>
   
   ```postgresql
-  CREATE TABLE department(id bigserial NOT NULL, name varchar NOT NULL, thumbnail text, department_id integer NOT NULL, link varchar, post_id integer);
+  CREATE TABLE proker(id bigserial NOT NULL, name varchar NOT NULL, thumbnail text, department_id integer NOT NULL, link varchar, post_id integer);
   ```
 </div>
 
