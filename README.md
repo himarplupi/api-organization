@@ -82,7 +82,6 @@
 <div align="left">
   <h3 align="center">NodeJS Setup</h3>
   <h4>Step 1</h4>
-  <p>Create database organization:</p>
 
   <b>Clone:</b>
 
