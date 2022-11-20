@@ -1,10 +1,10 @@
 // Library
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize')
 
 class KabinetService {
-  constructor(server) {
-    this.server = server;
-    this.db = this.server.model.db;
+  constructor (server) {
+    this.server = server
+    this.db = this.server.model.db
     this.table = this.db.define('kabinet', {
       name: {
         type: DataTypes.STRING,
@@ -29,10 +29,10 @@ class KabinetService {
     }, {
       tableName: 'kabinet',
       timestamps: false
-    });
+    })
   }
 
-  async addKabinet(name, priode, description, logo, active) {
+  async addKabinet (name, priode, description, logo, active) {
     const [data, created] = await this.table.findOrCreate({
       where: { name },
       defaults: {
@@ -41,46 +41,46 @@ class KabinetService {
         logo,
         active
       }
-    });
+    })
 
-    if(created) {
-      return 'created';
+    if (created) {
+      return 'created'
     } else {
-      return 'already';
+      return 'already'
     }
   }
 
-  async getAll(limit, page) {
-    let data = await this.table.findAll();
+  async getAll (limit, page) {
+    let data = await this.table.findAll()
     data = {
       total: data.length,
       kabinet: data.map((val) => val.dataValues).slice(limit * (page - 1), limit * page)
     }
-    
-    return data;
+
+    return data
   }
 
-  async getById(id) {
-    const data = await this.table.findOne({ where: { id }});
-    if(data === null) return null;
-    return data.dataValues;
+  async getById (id) {
+    const data = await this.table.findOne({ where: { id } })
+    if (data === null) return null
+    return data.dataValues
   }
 
-  async update(id, name, priode, description, logo, active) {
-    const data = await this.table.update({name, priode, description, logo, active}, {
+  async update (id, name, priode, description, logo, active) {
+    const data = await this.table.update({ name, priode, description, logo, active }, {
       where: {
         id
       }
-    });
+    })
 
-    return data[0];
+    return data[0]
   }
 
-  async delete(id) {
-    const data = await this.table.destroy({ where: { id }});
-    
-    return data;
+  async delete (id) {
+    const data = await this.table.destroy({ where: { id } })
+
+    return data
   }
 };
 
-module.exports = KabinetService;
+module.exports = KabinetService

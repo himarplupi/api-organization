@@ -1,24 +1,24 @@
-const KabinetService = require('../../services/KabinetService.js');
+const KabinetService = require('../../services/KabinetService.js')
 
 class GetAll {
-  constructor(server, api) {
+  constructor (server, api) {
     api.get('/kabinet', async (req, res) => {
-      const limit = Number(req.query.limit), page = Number(req.query.page), search = req.query.search;
-      
-      if(typeof(search) !== "string") {
+      const limit = Number(req.query.limit); const page = Number(req.query.page); const search = req.query.search
+
+      if (typeof (search) !== 'string') {
         res.status(400).send({
           status: 400,
           message: 'Bad Request'
-        });
+        })
 
-        return;
+        return
       }
 
-      const kabinetService = new KabinetService(server);
-      const data = await kabinetService.getAll(limit, page);
+      const kabinetService = new KabinetService(server)
+      const data = await kabinetService.getAll(limit, page)
 
       res.send({
-        status: "success",
+        status: 'success',
         data: {
           kabinet: data.kabinet,
           metadata: {
@@ -31,9 +31,9 @@ class GetAll {
             }
           }
         }
-      });
-    });
+      })
+    })
   }
 };
 
-module.exports = GetAll;
+module.exports = GetAll

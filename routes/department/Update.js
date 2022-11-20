@@ -1,32 +1,28 @@
 // App
-const DepartmentService = require('../../services/DepartmentService.js');
+const DepartmentService = require('../../services/DepartmentService.js')
 
 class Update {
-  constructor(server, api) {
+  constructor (server, api) {
     api.put('/departments/:id', async (req, res) => {
-      const id = Number(req.params.id);
-      const { name, division, logo } = req.body;
-      
-      const departmentService = new DepartmentService(server);
-      const data = await departmentService.update(id, name, division, logo);
+      const id = Number(req.params.id)
+      const { name, division, logo } = req.body
 
-      if(data === 1) {
+      const departmentService = new DepartmentService(server)
+      const data = await departmentService.update(id, name, division, logo)
+
+      if (data === 1) {
         res.send({
-          "status": "success",
-          "message": "department berhasil diperbarui"
+          status: 'success',
+          message: 'department berhasil diperbarui'
         })
-
-        return;
       } else {
         res.status(404).send({
-          "status": "not found",
-          "message": "department tidak ditemukan"
-        });
-
-        return;
+          status: 'not found',
+          message: 'department tidak ditemukan'
+        })
       }
-    });
+    })
   }
 };
 
-module.exports = Update;
+module.exports = Update

@@ -1,25 +1,25 @@
 // App
-const DepartmentService = require('../../services/DepartmentService.js');
+const DepartmentService = require('../../services/DepartmentService.js')
 
 class GetAll {
-  constructor(server, api) {
+  constructor (server, api) {
     api.get('/departments', async (req, res) => {
-      const limit = Number(req.query.limit), page = Number(req.query.page), search = req.query.search;
-      
-      if(typeof(search) !== "string") {
+      const limit = Number(req.query.limit); const page = Number(req.query.page); const search = req.query.search
+
+      if (typeof (search) !== 'string') {
         res.status(400).send({
           status: 400,
           message: 'Bad Request'
-        });
+        })
 
-        return;
+        return
       }
 
-      const departmentService = new DepartmentService(server);
-      const data = await departmentService.getAll(limit, page);
+      const departmentService = new DepartmentService(server)
+      const data = await departmentService.getAll(limit, page)
 
       res.send({
-        status: "success",
+        status: 'success',
         data: {
           departments: data.department,
           metadata: {
@@ -32,9 +32,9 @@ class GetAll {
             }
           }
         }
-      });
-    });
+      })
+    })
   }
 };
 
-module.exports = GetAll;
+module.exports = GetAll

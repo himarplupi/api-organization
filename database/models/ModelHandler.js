@@ -1,23 +1,22 @@
 // Library
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize')
 
 class ModelHandler {
-  constructor(server) {
-    this.server = server;
+  constructor (server) {
+    this.server = server
   }
 
-  connect(option) {
-
-    try{
-      this.db = new Sequelize(option);
-      this.db.authenticate();
-    } catch(err) {
-      console.log('Database Error');
-      return 'error';
+  connect (option) {
+    try {
+      this.db = new Sequelize(option)
+      this.db.authenticate()
+    } catch (err) {
+      console.log('Database Error')
+      return 'error'
     }
 
-    return this.db;
+    return this.db
   }
 };
 
-module.exports = ModelHandler;
+module.exports = ModelHandler

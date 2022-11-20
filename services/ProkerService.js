@@ -1,13 +1,13 @@
 // Library
-const { DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize')
 
 // App
-const DepartmentService = require('./DepartmentService.js');
+const DepartmentService = require('./DepartmentService.js')
 
 class ProkerService {
-  constructor(server) {
-    this.server = server;
-    this.db = this.server.model.db;
+  constructor (server) {
+    this.server = server
+    this.db = this.server.model.db
     this.table = this.db.define('proker', {
       name: {
         type: DataTypes.STRING,
@@ -32,27 +32,27 @@ class ProkerService {
     }, {
       tableName: 'proker',
       timestamps: false
-    });
+    })
   }
 
-  async create(name, thumbnail, department_id, link, post_id) {
+  async create (name, thumbnail, department_id, link, post_id) {
     const [data, created] = await this.table.findOrCreate({
       where: { name, department_id },
       defaults: { thumbnail, link, post_id }
-    });
+    })
 
-    if(created) {
-      return 'created';
+    if (created) {
+      return 'created'
     } else {
-      return 'already';
+      return 'already'
     }
   }
 
-  async getAll(limit, page, department_id) {
-    let data = await this.table.findAll({ where: { department_id }});
+  async getAll (limit, page, department_id) {
+    let data = await this.table.findAll({ where: { department_id } })
 
-    const departmentService = new DepartmentService(this.server);
-    const departmentData = await departmentService.getById(department_id);
+    const departmentService = new DepartmentService(this.server)
+    const departmentData = await departmentService.getById(department_id)
 
     data = {
       total: data.length,
@@ -62,42 +62,42 @@ class ProkerService {
           name: departmentData.name
         }
 
-        delete val.dataValues.department_id;
-        
-        return val.dataValues;
+        delete val.dataValues.department_id
+
+        return val.dataValues
       }).slice(limit * (page - 1), limit * page)
     }
-    
-    return data;
+
+    return data
   }
 
-  async getById(id) {
-    const data = await this.table.findOne({ where: { id }});
-    if(data === null) return null;
+  async getById (id) {
+    const data = await this.table.findOne({ where: { id } })
+    if (data === null) return null
 
-    const departmentService = new DepartmentService(this.server);
-    const departmentData = await departmentService.getById(data.department_id);
-    
-    data.dataValues.department = departmentData;
+    const departmentService = new DepartmentService(this.server)
+    const departmentData = await departmentService.getById(data.department_id)
 
-    return data.dataValues;
+    data.dataValues.department = departmentData
+
+    return data.dataValues
   }
 
-  async update(id, name, thumbnail, link, department_id) {
+  async update (id, name, thumbnail, link, department_id) {
     const data = await this.table.update({ name, thumbnail, link, department_id }, {
       where: {
         id
       }
-    });
+    })
 
-    return data[0];
+    return data[0]
   }
 
-  async delete(id) {
-    const data = await this.table.destroy({ where: { id }});
-    
-    return data;
+  async delete (id) {
+    const data = await this.table.destroy({ where: { id } })
+
+    return data
   }
 }
 
-module.exports = ProkerService;
+module.exports = ProkerService

@@ -1,56 +1,55 @@
 // App
-const KabinetService = require('../../services/KabinetService.js');
+const KabinetService = require('../../services/KabinetService.js')
 
 class Create {
-  constructor(server, api) {
+  constructor (server, api) {
     api.post('/kabinet', async (req, res) => {
-      const { name, priode, description, logo, active} = req.body;
-      
-      if(!name || !priode) {
+      const { name, priode, description, logo, active } = req.body
+
+      if (!name || !priode) {
         res.status(400).send({
           status: 400,
           message: 'Bad Request'
-        });
+        })
 
-        return;
+        return
       }
 
-      if(!active) {
-        active = false;
+      if (!active) {
+        active = false
       }
-      
-      if(
-        typeof(name) !== "string" ||
-        typeof(priode) !== "number" ||
-        typeof(description) !== "string" ||
-        typeof(logo) !== "string" ||
-        typeof(active) !== "boolean"
+
+      if (
+        typeof (name) !== 'string' ||
+        typeof (priode) !== 'number' ||
+        typeof (description) !== 'string' ||
+        typeof (logo) !== 'string' ||
+        typeof (active) !== 'boolean'
       ) {
         res.status(400).send({
           status: 400,
           message: 'Bad Request'
-        });
+        })
 
-        return;
+        return
       }
 
-      const kabinetService = new KabinetService(server);
-      const isCreated = await kabinetService.addKabinet(name, priode, description, logo, active);
+      const kabinetService = new KabinetService(server)
+      const isCreated = await kabinetService.addKabinet(name, priode, description, logo, active)
 
-      if(isCreated === 'created') {
+      if (isCreated === 'created') {
         res.status(201).send({
-          status: "success",
-          message: "kabinet baru berhasil dibuat"
-        });
-      } else if(isCreated === 'already') {
+          status: 'success',
+          message: 'kabinet baru berhasil dibuat'
+        })
+      } else if (isCreated === 'already') {
         res.status(400).send({
-          status: "success",
-          message: "kabinet sudah tersedia"
-        });
+          status: 'success',
+          message: 'kabinet sudah tersedia'
+        })
       }
-
-    });
+    })
   }
 };
 
-module.exports = Create;
+module.exports = Create

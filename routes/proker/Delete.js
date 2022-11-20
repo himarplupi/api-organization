@@ -1,30 +1,26 @@
 // App
-const ProkerService = require('../../services/ProkerService.js');
+const ProkerService = require('../../services/ProkerService.js')
 
 class Delete {
-  constructor(server, api) {
+  constructor (server, api) {
     api.delete('/prokers/:id', async (req, res) => {
-      const id = Number(req.params.id);
-      const prokerService = new ProkerService(server);
-      const data = await prokerService.delete(id);
+      const id = Number(req.params.id)
+      const prokerService = new ProkerService(server)
+      const data = await prokerService.delete(id)
 
-      if(data === 1) {
+      if (data === 1) {
         res.send({
-          "status": "success",
-          "message": "proker berhasil dihapus"
-        });
-
-        return;
+          status: 'success',
+          message: 'proker berhasil dihapus'
+        })
       } else {
         res.status(404).send({
-          "status": "not found",
-          "message": "proker tidak ditemukan"
-        });
-
-        return;
+          status: 'not found',
+          message: 'proker tidak ditemukan'
+        })
       }
-    });
+    })
   }
 };
 
-module.exports = Delete;
+module.exports = Delete
