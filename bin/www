@@ -13,7 +13,7 @@ const app = new Server();
  * Get port from environment and store in Express.
  */
 
-app.init();
+app.init()
 
 const port = normalizePort(process.env.PORT || '3000')
 app.api.set('port', port)
