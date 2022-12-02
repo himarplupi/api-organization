@@ -56,7 +56,7 @@
   <p>Create table kabinet:</p>
   
   ```postgresql
-  CREATE TABLE kabinet(id bigserial NOT NULL, name varchar NOT NULL, priode integer NOT NULL, description text, logo text, actie boolean);
+  CREATE TABLE kabinet(id bigserial NOT NULL, name varchar NOT NULL, priode integer NOT NULL, description text, logo text, active boolean);
   ```
   
   <h4>Step 4</h4>
