@@ -7,31 +7,31 @@
 <br>
 
 <div align="left">
-  API Documentation: 
+  API Documentation: <a href="API-docs.md">Click Here</a>
   <h2>TODO List</h2>
   <h3>Kabinet</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambahkan kabinet baru</li>
-    <li>Membuat fungsi edit kabinet</li>
-    <li>Membuat fungsi delete kabinet</li>
-    <li>Membuat fungsi untuk menampilkan seluruh kabinet</li>
+  <ul>
+    <li>Membuat fungsi untuk menambahkan kabinet baru ✔️</li>
+    <li>Membuat fungsi edit kabinet ✔️</li>
+    <li>Membuat fungsi delete kabinet ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh kabinet ✔️</li>
   </ul>
   <h3>Department</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambah departement</li>
-    <li>Membuat fungsi edit departement</li>
-    <li>Membuat fungsi delete departement</li>
-    <li>Membuat fungsi untuk menampilkan seluruh departement</li>
-    <li>Membuat fungsi untuk menampilkan detail  departemen berdasarkan id</li>
+  <ul>
+    <li>Membuat fungsi untuk menambah departement ✔️</li>
+    <li>Membuat fungsi edit departement ✔️</li>
+    <li>Membuat fungsi delete departement ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh departement ✔️</li>
+    <li>Membuat fungsi untuk menampilkan detail  departemen berdasarkan id ✔️</li>
   </ul>
   <h3>Proker</h3>
-  <ul style="list-style-type: '✔️';">
-    <li>Membuat fungsi untuk menambah proker baru</li>
-    <li>Membuat fungsi edit proker</li>
-    <li>Membuat fungsi delete proker</li>
-    <li>Membuat fungsi untuk menampilkan seluruh proker</li>
-    <li>Membuat fungsi untuk menampilkan detail proker berdasarkan id</li>
-    <li>Membuat fungsi pencarian proker</li>
+  <ul>
+    <li>Membuat fungsi untuk menambah proker baru ✔️</li>
+    <li>Membuat fungsi edit proker ✔️</li>
+    <li>Membuat fungsi delete proker ✔️</li>
+    <li>Membuat fungsi untuk menampilkan seluruh proker ✔️</li>
+    <li>Membuat fungsi untuk menampilkan detail proker berdasarkan id  ✔️</li>
+    <li>Membuat fungsi pencarian proker ✔️</li>
   </ul>
 </div>
 
@@ -73,7 +73,7 @@
   <p>Create table proker:</p>
   
   ```postgresql
-  CREATE TABLE department(id bigserial NOT NULL, name varchar NOT NULL, thumbnail text, department_id integer NOT NULL, link varchar, post_id integer);
+  CREATE TABLE proker(id bigserial NOT NULL, name varchar NOT NULL, thumbnail text, department_id integer NOT NULL, link varchar, post_id integer);
   ```
 </div>
 
@@ -82,7 +82,6 @@
 <div align="left">
   <h3 align="center">NodeJS Setup</h3>
   <h4>Step 1</h4>
-  <p>Create database organization:</p>
 
   <b>Clone:</b>
 
