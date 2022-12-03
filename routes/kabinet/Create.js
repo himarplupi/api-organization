@@ -4,7 +4,7 @@ const KabinetService = require('../../services/KabinetService.js')
 class Create {
   constructor (server, api) {
     api.post('/kabinet', async (req, res) => {
-      const { name, priode, description, logo, active } = req.body
+      let { name, priode, description, logo, active } = req.body
 
       if (!name || !priode) {
         res.status(400).send({
